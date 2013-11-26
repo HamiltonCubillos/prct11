@@ -373,7 +373,7 @@ class MatrizDispersa < Matriz
    end
    
    def minimo
-      min=1000;
+      min=0; #si es una matriz dispersa me interesa buscar los numeros menores que 0
       filas.times do |i|
          columnas.times do |j|
             if (hash_no_ceros.key?("#{i}#{j}"))
@@ -388,3 +388,6 @@ class MatrizDispersa < Matriz
       return min
    end
 end
+
+# mdis5=MatrizDispersa.new([[0,0,0],[1,2,3],[0,0,0]])
+# puts mdis5.minimo

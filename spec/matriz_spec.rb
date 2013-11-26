@@ -178,7 +178,7 @@ describe Matriz do
        (@MDen5.minimo).should eq 2
     end
     it "De una matriz Dispersa" do
-       (@MaDis5.minimo).should eq 0
+       (@MDis5.minimo).should eq 0
     end
  end
  
