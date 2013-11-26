@@ -1,4 +1,4 @@
-require "./gcd.rb"  #definicion del mcd
+require "gcd.rb"  #definicion del mcd
 
 # Definicion de la clase Fraccion
 class Fraccion

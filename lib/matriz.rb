@@ -206,16 +206,17 @@ end
 class MatrizDensa < Matriz
 
         def +(other)
-                suma=MatrizDensa.new(Array.new(@filas,0){Array.new(@columnas,0)})
-                filas.times do |i|
+        sumam = Array.new(@filas,0){Array.new(@columnas,0)}
+        filas.times do |i|
          columnas.times do |j|
-                                                if (other.hash_no_ceros.key?("#{i}#{j}"))
-                                                        suma.matriz[i][j] = other.hash_no_ceros["#{i}#{j}"] + matriz[i][j]
-                                                else
-                                                        suma.matriz[i][j] = matriz[i][j]
-                                                end
-                                        end
+             if (other.hash_no_ceros.key?("#{i}#{j}"))
+                    sumam[i][j] = other.hash_no_ceros["#{i}#{j}"] + matriz[i][j]
+             else
+                    sumam[i][j] = matriz[i][j]
+             end
+          end
        end
+       suma=MatrizDensa.new(sumam)
        return suma                
         end
   
@@ -279,15 +280,17 @@ class MatrizDispersa < Matriz
     def +(other)
       raise TypeError, "La matriz other no es dispersa" unless other.instance_of? MatrizDispersa
       raise ArgumentError, "La longitud de las matrices no coincide." unless @filas == other.filas && @columnas == other.columnas
+      
       suma=MatrizDispersa.new(Array.new(@filas,0){Array.new(@columnas,0)})
       suma.hash_no_ceros = (hash_no_ceros.merge(other.hash_no_ceros){|key,oldval,newval| oldval+newval}).clone
+      
       if comprobar(suma.hash_no_ceros)
-                                        return suma
+         return suma
       else
-                                        m = Array.new(@filas,0){Array.new(@columnas,0)}
-                                        suma.hash_no_ceros.each {|key, value| m[(key[0]).to_i][(key[1]).to_i] = value }
-                                        sum = MatrizDensa.new(m)
-                return sum
+         m = Array.new(@filas,0){Array.new(@columnas,0)}
+         suma.hash_no_ceros.each {|key, value| m[(key[0]).to_i][(key[1]).to_i] = value }
+         sum = MatrizDensa.new(m)
+         return sum
       end
       
                         
