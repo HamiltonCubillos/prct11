@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title>README - RDoc Documentation</title>
+<title>RDoc Documentation</title>
 
 <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
 
@@ -20,7 +20,7 @@
 <script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
 
 
-<body class="file">
+<body>
 <nav id="metadata">
   <nav id="home-section" class="section">
   <h3 class="section-header">
@@ -43,45 +43,13 @@
 </nav>
 
 
-  
-<div id="table-of-contents">
-  <nav class="section">
-    <h3 class="section-header">Table of Contents</h3>
-    <ul>
-      <li><a href="#label-MatrizHM">MatrizHM</a>
-      <li><a href="#label-Installation">Installation</a>
-      <li><a href="#label-Usage">Usage</a>
-      <li><a href="#label-Contributing">Contributing</a>
-    </ul>
-  </nav>
-</div>
-
-
   <div id="project-metadata">
     <nav id="fileindex-section" class="section project-section">
   <h3 class="section-header">Pages</h3>
 
   <ul>
   
-    <li class="file"><a href="./Gemfile.html">Gemfile</a>
-  
-    <li class="file"><a href="./Guardfile.html">Guardfile</a>
-  
-    <li class="file"><a href="./LICENSE_txt.html">LICENSE</a>
-  
     <li class="file"><a href="./README_md.html">README</a>
-  
-    <li class="file"><a href="./Rakefile.html">Rakefile</a>
-  
-    <li class="file"><a href="./doc/created_rid.html">created.rid</a>
-  
-    <li class="file"><a href="./lib/matriz_rb~.html">matriz.rb~</a>
-  
-    <li class="file"><a href="./lib/racional_rb~.html">racional.rb~</a>
-  
-    <li class="file"><a href="./matrizHM_gemspec.html">matrizHM.gemspec</a>
-  
-    <li class="file"><a href="./spec/matriz_spec_rb~.html">matriz_spec.rb~</a>
   
   </ul>
 </nav>
@@ -93,6 +61,8 @@
   
     <li><a href="./Fraccion.html">Fraccion</a>
   
+    <li><a href="./Matriz.html">Matriz</a>
+  
     <li><a href="./MatrizDensa.html">MatrizDensa</a>
   
     <li><a href="./MatrizDispersa.html">MatrizDispersa</a>
@@ -101,6 +71,8 @@
   
     <li><a href="./Object.html">Object</a>
   
+    <li><a href="./Operatoria.html">Operatoria</a>
+  
   </ul>
 </nav>
 
@@ -108,16 +80,16 @@
 </nav>
 
 <div id="documentation" class="description">
-  
+
 <h1 id="label-MatrizHM"><a href="MatrizHM.html">MatrizHM</a><span><a href="#label-MatrizHM">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
 
 <p>TODO: Write a gem description</p>
 
 <h2 id="label-Installation">Installation<span><a href="#label-Installation">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 
-<p>Add this line to your application’s Gemfile:</p>
+<p>Add this line to your application&#39;s Gemfile:</p>
 
-<pre>gem 'matrizHM'</pre>
+<pre>gem &#39;matrizHM&#39;</pre>
 
 <p>And then execute:</p>
 
@@ -137,46 +109,54 @@
 </li><li>
 <p>Create your feature branch (<code>git checkout -b my-new-feature</code>)</p>
 </li><li>
-<p>Commit your changes (<code>git commit -am 'Add some feature'</code>)</p>
+<p>Commit your changes (<code>git commit -am &#39;Add some
+feature&#39;</code>)</p>
 </li><li>
 <p>Push to the branch (<code>git push origin my-new-feature</code>)</p>
 </li><li>
 <p>Create new Pull Request</p>
 </li></ol>
 
-<p>La clase Base es la clase Matriz,en ella se definen las operaciones básicas
-sobre matrices. Las clase matriz dispersa y matriz densa invalidan los
-métodos de la clase base. -Métodos de la clase Matriz: Los únicos métodos
-que se implementaron fueron el maximo y minimo que devuelven el elemento
-mayor de una matriz y para el segundo caso retorna el menor elemento  El
-resto de métodos son idénticos a los de la práctica Nº9. Veáse dicha
-práctica para obtener informacion sobre los métodos implementados en esta
-clase.</p>
+<p>La clase Base es la clase <a href="Matriz.html">Matriz</a>,en ella se
+definen las operaciones básicas sobre matrices. Las clase matriz dispersa y
+matriz densa invalidan los métodos de la clase base.
+-Métodos de la clase
+Matriz: Los únicos métodos que se implementaron fueron el maximo y minimo
+que devuelven el elemento mayor de una matriz y para el segundo caso
+retorna el menor elemento
+ El resto de métodos son idénticos a los de la
+práctica Nº9. Veáse dicha práctica para obtener informacion sobre los
+métodos implementados en esta clase.</p>
 
-<p>-Métodos de la clase Matriz Dispersa</p>
+<p>-Métodos de la clase <a href="Matriz.html">Matriz</a> Dispersa</p>
 
 <p>to_s: Método que imprime por patalla una matriz dispersa.Internamente
-recorre los elementos del hash y los muestra def +(other): Permite sumar un
-objeto Matriz Dispersa(self) con otro pasado por parámetro.Devuelve la suma
-de dichos elementos que es un objeto <a
-href="MatrizDispersa.html">MatrizDispersa</a> def -(other): Permite restar
-un objeto Matriz Dispersa(self) con otro pasado por parámetro.Devuelve un
-objeto <a href="MatrizDispersa.html">MatrizDispersa</a> como resta de ambas
-matrices def *(other): Permite multiplicar un objeto Matriz Dispersa(self)
-con otro pasado por parámetro.Devuelve un objeto <a
+recorre los elementos del hash y los muestra
+def +(other): Permite sumar un
+objeto <a href="Matriz.html">Matriz</a> Dispersa(self) con otro pasado por
+parámetro.Devuelve la suma de dichos elementos que es un objeto <a
+href="MatrizDispersa.html">MatrizDispersa</a>
+def -(other): Permite restar
+un objeto <a href="Matriz.html">Matriz</a> Dispersa(self) con otro pasado
+por parámetro.Devuelve un objeto <a
+href="MatrizDispersa.html">MatrizDispersa</a> como resta de ambas
+matrices
+def *(other): Permite multiplicar un objeto <a
+href="Matriz.html">Matriz</a> Dispersa(self) con otro pasado por
+parámetro.Devuelve un objeto <a
 href="MatrizDispersa.html">MatrizDispersa</a> como multiplicación de ambas
-matrices def maximo: Devuelve el mayor elemento dentro de una matriz
-Dispersa. Internamente Recorre un hash y retorna el mayor elemento. def
+matrices
+def maximo: Devuelve el mayor elemento dentro de una matriz
+Dispersa. Internamente Recorre un hash y retorna el mayor elemento.
+def
 min: Devuelve el menor elemento dentro de una matriz Dispersa. Internamente
 Recorre un hash y retorna el menor elemento.</p>
-
 </div>
-
 
 
 <footer id="validator-badges">
   <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
-  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.1.
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
   <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
 </footer>
 

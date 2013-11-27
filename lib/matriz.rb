@@ -7,19 +7,6 @@
 #  -> Se pretende construir una gema que contenga los principales métodos para matrices densas y dispersas siguiendo la filosofía de la programación funcional.
 #  -> Utilización de la gema Rdoc para generar documentación.
 #
-# ===Clase MatrizDensa
-#
-#   Es la clase base de nuestra aplicación,en ella se definen los principales métodos para operar con matrices.
-#   Alguno de los métodos son :
-#       Constructor: Es el método encargado de decidir si lo que se le pasa como parámetro es una matriz densa o dispersa,en función de esto llama a un constructor u otro.
-#       to_s: Método que imprime por patalla una matriz recorriendo uno a uno los elementos de dicha matriz.
-#       +(other): Permite sumar un objeto MatrizDensa (self) con otro pasado por parámetro.Devuelve la suma de dichos elementos que es un objeto MatrizDensa.
-#       -(other): Permite restar un objeto MatrizDensa con otro pasado por parámetro.Devuelve la resta de dichos elementos como un objeto MatrizDensa.
-#       *(other): Permite multiplicar un objeto MatrizDensa(self) con otro pasado por parámetro.Devuelve un objeto MatrizDensa como multiplicación de ambas matrices .
-#       maximo: Devuelve el mayor elemento dentro de una matriz recorriendo la misma y quedándose con el mayor elemento encontrado.
-#       maximo: Devuelve el menor elemento dentro de una matriz recorriendo la misma y quedándose con el menor elemento encontrado.
-
-# coding: utf-8
 
 module Operatoria
      
@@ -202,7 +189,18 @@ class Matriz
    
 end
 
-#matriz normal
+# ===Clase MatrizDensa
+#
+#   Es la clase base de nuestra aplicación,en ella se definen los principales métodos para operar con matrices.
+#   Alguno de los métodos son :
+#       Constructor: Es el método encargado de decidir si lo que se le pasa como parámetro es una matriz densa o dispersa,en función de esto llama a un constructor u otro.
+#       to_s: Método que imprime por patalla una matriz recorriendo uno a uno los elementos de dicha matriz.
+#       +(other): Permite sumar un objeto MatrizDensa (self) con otro pasado por parámetro.Devuelve la suma de dichos elementos que es un objeto MatrizDensa.
+#       -(other): Permite restar un objeto MatrizDensa con otro pasado por parámetro.Devuelve la resta de dichos elementos como un objeto MatrizDensa.
+#       *(other): Permite multiplicar un objeto MatrizDensa(self) con otro pasado por parámetro.Devuelve un objeto MatrizDensa como multiplicación de ambas matrices .
+#       maximo: Devuelve el mayor elemento dentro de una matriz recorriendo la misma y quedándose con el mayor elemento encontrado.
+#       maximo: Devuelve el menor elemento dentro de una matriz recorriendo la misma y quedándose con el menor elemento encontrado.
+
 class MatrizDensa < Matriz
 
         def +(other)
@@ -221,6 +219,11 @@ class MatrizDensa < Matriz
         end
   
 end
+
+# ===Clase MatrizDispersa
+#
+#   Es la clase hija.  utilizamos hashes
+#
 
 class MatrizDispersa < Matriz
     #modificar el initialize,pues no necesito almacenar los '0' guardar los indices donde se encuentran dichos ceros
