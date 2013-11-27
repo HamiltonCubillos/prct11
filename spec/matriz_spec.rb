@@ -160,9 +160,6 @@ describe Matriz do
  
 
  describe "Debe existir " do
-    it "Multiplicacion de matrices dispersas" do
-#        (MatrizDispersa.respond_to? :* ).should be_true
-    end
     
     it "Y hacerla correctamente " do
       mdmultaux=@MaDis3*@MaDis4
