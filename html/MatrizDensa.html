@@ -125,7 +125,6 @@
 
 <pre>Es la clase base de nuestra aplicación,en ella se definen los principales métodos para operar con matrices.
 Alguno de los métodos son :
-    Constructor: Es el método encargado de decidir si lo que se le pasa como parámetro es una matriz densa o dispersa,en función de esto llama a un constructor u otro.
     to_s: Método que imprime por patalla una matriz recorriendo uno a uno los elementos de dicha matriz.
     +(other): Permite sumar un objeto MatrizDensa (self) con otro pasado por parámetro.Devuelve la suma de dichos elementos que es un objeto MatrizDensa.
     -(other): Permite restar un objeto MatrizDensa con otro pasado por parámetro.Devuelve la resta de dichos elementos como un objeto MatrizDensa.
@@ -172,7 +171,7 @@ Alguno de los métodos son :
 
           
           <div class="method-source-code" id="2B-source">
-            <pre><span class="ruby-comment"># File lib/matriz.rb, line 205</span>
+            <pre><span class="ruby-comment"># File lib/matriz.rb, line 208</span>
  <span class="ruby-keyword">def</span> <span class="ruby-operator">+</span>(<span class="ruby-identifier">other</span>)
  <span class="ruby-identifier">sumam</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@filas</span>,<span class="ruby-value">0</span>){<span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@columnas</span>,<span class="ruby-value">0</span>)}
  <span class="ruby-identifier">filas</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>

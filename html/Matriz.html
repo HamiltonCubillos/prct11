@@ -143,8 +143,9 @@
 
   <div id="description" class="description">
     
-<p>Clase Base que contiene el metodo initilize y los getters. Además contiene
-el <a href="Matriz.html#method-i-to_s">#to_s</a> y el método []</p>
+<h3 id="label-Clase+Matriz">Clase <a href="Matriz.html">Matriz</a><span><a href="#label-Clase+Matriz">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+
+<pre>Es la clase base de nuestra aplicación,en ella se definen los principales métodos para operar con matrices(mediante el modulo operatoria).</pre>
 
   </div><!-- description -->
 
@@ -172,7 +173,7 @@ el <a href="Matriz.html#method-i-to_s">#to_s</a> y el método []</p>
 
         <div class="method-description">
         
-        
+        <p>atributos de la clase</p>
         
         </div>
       </div>
@@ -185,7 +186,7 @@ el <a href="Matriz.html#method-i-to_s">#to_s</a> y el método []</p>
 
         <div class="method-description">
         
-        
+        <p>atributos de la clase</p>
         
         </div>
       </div>
@@ -198,7 +199,7 @@ el <a href="Matriz.html#method-i-to_s">#to_s</a> y el método []</p>
 
         <div class="method-description">
         
-        
+        <p>atributos de la clase</p>
         
         </div>
       </div>
@@ -231,7 +232,7 @@ el <a href="Matriz.html#method-i-to_s">#to_s</a> y el método []</p>
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/matriz.rb, line 112</span>
+            <pre><span class="ruby-comment"># File lib/matriz.rb, line 116</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">matriz</span>)
    <span class="ruby-ivar">@matriz</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">matriz</span>)
    <span class="ruby-ivar">@filas</span> = <span class="ruby-identifier">matriz</span>.<span class="ruby-identifier">size</span>
@@ -285,7 +286,7 @@ el <a href="Matriz.html#method-i-to_s">#to_s</a> y el método []</p>
 
           
           <div class="method-source-code" id="5B-5D-source">
-            <pre><span class="ruby-comment"># File lib/matriz.rb, line 158</span>
+            <pre><span class="ruby-comment"># File lib/matriz.rb, line 162</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span>)
    <span class="ruby-identifier">matriz</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -318,7 +319,7 @@ el <a href="Matriz.html#method-i-to_s">#to_s</a> y el método []</p>
 
           
           <div class="method-source-code" id="comprobar-source">
-            <pre><span class="ruby-comment"># File lib/matriz.rb, line 131</span>
+            <pre><span class="ruby-comment"># File lib/matriz.rb, line 135</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">comprobar</span> (<span class="ruby-identifier">matriz</span>)
 
  <span class="ruby-identifier">n_ceros</span>=<span class="ruby-value">0</span>
@@ -362,7 +363,7 @@ el <a href="Matriz.html#method-i-to_s">#to_s</a> y el método []</p>
 
           
           <div class="method-source-code" id="maximo-source">
-            <pre><span class="ruby-comment"># File lib/matriz.rb, line 162</span>
+            <pre><span class="ruby-comment"># File lib/matriz.rb, line 166</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">maximo</span>
    <span class="ruby-identifier">max</span>=<span class="ruby-value">0</span>;
    <span class="ruby-identifier">filas</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
@@ -404,7 +405,7 @@ el <a href="Matriz.html#method-i-to_s">#to_s</a> y el método []</p>
 
           
           <div class="method-source-code" id="minimo-source">
-            <pre><span class="ruby-comment"># File lib/matriz.rb, line 176</span>
+            <pre><span class="ruby-comment"># File lib/matriz.rb, line 180</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">minimo</span>
    <span class="ruby-identifier">min</span>=<span class="ruby-value">9999</span>;
    <span class="ruby-identifier">filas</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
@@ -446,7 +447,7 @@ el <a href="Matriz.html#method-i-to_s">#to_s</a> y el método []</p>
 
           
           <div class="method-source-code" id="to_s-source">
-            <pre><span class="ruby-comment"># File lib/matriz.rb, line 147</span>
+            <pre><span class="ruby-comment"># File lib/matriz.rb, line 151</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
    <span class="ruby-value">0</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-identifier">filas</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
       <span class="ruby-value">0</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-identifier">columnas</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">j</span><span class="ruby-operator">|</span>

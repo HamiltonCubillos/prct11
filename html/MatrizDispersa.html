@@ -139,7 +139,8 @@
     
 <h3 id="label-Clase+MatrizDispersa">Clase <a href="MatrizDispersa.html">MatrizDispersa</a><span><a href="#label-Clase+MatrizDispersa">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
 
-<pre>Es la clase hija.  utilizamos hashes</pre>
+<pre>Es la clase hija en la que utilizamos un hash para almacenar las posiciones y los valores de los elementos que no son ceros
+Se redefinen los métodos heredados.</pre>
 
   </div><!-- description -->
 
@@ -167,9 +168,7 @@
 
         <div class="method-description">
         
-        <p>modificar el initialize,pues no necesito almacenar los &#39;0&#39; guardar
-los indices donde se encuentran dichos ceros metodo que dado una fila y
-columna y un porcentaje de ceros prc,construye una matriz aleatoria</p>
+        <p>atributos de la clase</p>
         
         </div>
       </div>
@@ -182,9 +181,7 @@ columna y un porcentaje de ceros prc,construye una matriz aleatoria</p>
 
         <div class="method-description">
         
-        <p>modificar el initialize,pues no necesito almacenar los &#39;0&#39; guardar
-los indices donde se encuentran dichos ceros metodo que dado una fila y
-columna y un porcentaje de ceros prc,construye una matriz aleatoria</p>
+        <p>atributos de la clase</p>
         
         </div>
       </div>
@@ -197,9 +194,7 @@ columna y un porcentaje de ceros prc,construye una matriz aleatoria</p>
 
         <div class="method-description">
         
-        <p>modificar el initialize,pues no necesito almacenar los &#39;0&#39; guardar
-los indices donde se encuentran dichos ceros metodo que dado una fila y
-columna y un porcentaje de ceros prc,construye una matriz aleatoria</p>
+        <p>atributos de la clase</p>
         
         </div>
       </div>
@@ -232,7 +227,7 @@ columna y un porcentaje de ceros prc,construye una matriz aleatoria</p>
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/matriz.rb, line 232</span>
+            <pre><span class="ruby-comment"># File lib/matriz.rb, line 235</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">matriz</span>)
    <span class="ruby-ivar">@filas</span> = <span class="ruby-identifier">matriz</span>.<span class="ruby-identifier">size</span>
    <span class="ruby-ivar">@columnas</span> = <span class="ruby-identifier">matriz</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">size</span>
@@ -293,7 +288,7 @@ columna y un porcentaje de ceros prc,construye una matriz aleatoria</p>
 
           
           <div class="method-source-code" id="2A-source">
-            <pre><span class="ruby-comment"># File lib/matriz.rb, line 318</span>
+            <pre><span class="ruby-comment"># File lib/matriz.rb, line 321</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">*</span>(<span class="ruby-identifier">other</span>)
    <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>, <span class="ruby-string">&quot;La matriz other no es dispersa&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">instance_of?</span> <span class="ruby-constant">MatrizDispersa</span>
    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;La longitud de las matrices no coincide.&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@columnas</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">filas</span>
@@ -354,7 +349,7 @@ columna y un porcentaje de ceros prc,construye una matriz aleatoria</p>
 
           
           <div class="method-source-code" id="2B-source">
-            <pre><span class="ruby-comment"># File lib/matriz.rb, line 282</span>
+            <pre><span class="ruby-comment"># File lib/matriz.rb, line 285</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">+</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>, <span class="ruby-string">&quot;La matriz other no es dispersa&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">instance_of?</span> <span class="ruby-constant">MatrizDispersa</span>
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;La longitud de las matrices no coincide.&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@filas</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">filas</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@columnas</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">columnas</span>
@@ -400,7 +395,7 @@ columna y un porcentaje de ceros prc,construye una matriz aleatoria</p>
 
           
           <div class="method-source-code" id="2D-source">
-            <pre><span class="ruby-comment"># File lib/matriz.rb, line 299</span>
+            <pre><span class="ruby-comment"># File lib/matriz.rb, line 302</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">-</span>(<span class="ruby-identifier">other</span>)
  <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>, <span class="ruby-string">&quot;La matriz other no es dispersa&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">instance_of?</span> <span class="ruby-constant">MatrizDispersa</span>
  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;La longitud de las matrices no coincide.&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@filas</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">filas</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@columnas</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">columnas</span>
@@ -444,9 +439,9 @@ columna y un porcentaje de ceros prc,construye una matriz aleatoria</p>
 
           
           <div class="method-source-code" id="3D-3D-source">
-            <pre><span class="ruby-comment"># File lib/matriz.rb, line 314</span>
+            <pre><span class="ruby-comment"># File lib/matriz.rb, line 317</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">==</span>(<span class="ruby-identifier">other</span>)
-                     <span class="ruby-identifier">hash_no_ceros</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">hash_no_ceros</span>
+  <span class="ruby-identifier">hash_no_ceros</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">hash_no_ceros</span>
 <span class="ruby-keyword">end</span></pre>
           </div><!-- 3D-3D-source -->
           
@@ -477,7 +472,7 @@ columna y un porcentaje de ceros prc,construye una matriz aleatoria</p>
 
           
           <div class="method-source-code" id="comprobar-source">
-            <pre><span class="ruby-comment"># File lib/matriz.rb, line 259</span>
+            <pre><span class="ruby-comment"># File lib/matriz.rb, line 262</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">comprobar</span> (<span class="ruby-identifier">hash</span>)
      <span class="ruby-keyword">if</span> <span class="ruby-identifier">hash</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> ((<span class="ruby-ivar">@filas</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@columnas</span>)<span class="ruby-operator">*</span><span class="ruby-value">0.4</span>)
              <span class="ruby-keyword">false</span>
@@ -514,7 +509,7 @@ columna y un porcentaje de ceros prc,construye una matriz aleatoria</p>
 
           
           <div class="method-source-code" id="maximo-source">
-            <pre><span class="ruby-comment"># File lib/matriz.rb, line 350</span>
+            <pre><span class="ruby-comment"># File lib/matriz.rb, line 353</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">maximo</span>
    <span class="ruby-identifier">max</span>=<span class="ruby-value">0</span>;
    <span class="ruby-identifier">filas</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
@@ -559,7 +554,7 @@ columna y un porcentaje de ceros prc,construye una matriz aleatoria</p>
 
           
           <div class="method-source-code" id="minimo-source">
-            <pre><span class="ruby-comment"># File lib/matriz.rb, line 366</span>
+            <pre><span class="ruby-comment"># File lib/matriz.rb, line 369</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">minimo</span>
    <span class="ruby-identifier">min</span>=<span class="ruby-value">0</span>; <span class="ruby-comment">#si es una matriz dispersa me interesa buscar los numeros menores que 0</span>
    <span class="ruby-identifier">filas</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
@@ -604,7 +599,7 @@ columna y un porcentaje de ceros prc,construye una matriz aleatoria</p>
 
           
           <div class="method-source-code" id="to_s-source">
-            <pre><span class="ruby-comment"># File lib/matriz.rb, line 267</span>
+            <pre><span class="ruby-comment"># File lib/matriz.rb, line 270</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
    <span class="ruby-identifier">filas</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
      <span class="ruby-identifier">columnas</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">j</span><span class="ruby-operator">|</span>

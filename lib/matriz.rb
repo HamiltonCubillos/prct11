@@ -103,11 +103,15 @@ module Operatoria
    end
 end
   
-#Clase Base que contiene el metodo initilize y los getters. Además contiene el to_s y el método []
+# ===Clase Matriz
+#
+#   Es la clase base de nuestra aplicación,en ella se definen los principales métodos para operar con matrices(mediante el modulo operatoria).
+#    
 class Matriz
    require "racional.rb" #definicion de la clase racional
    
    include Operatoria
+   #atributos de la clase
    attr_accessor :matriz, :filas, :columnas
    
    def initialize(matriz)
@@ -193,7 +197,6 @@ end
 #
 #   Es la clase base de nuestra aplicación,en ella se definen los principales métodos para operar con matrices.
 #   Alguno de los métodos son :
-#       Constructor: Es el método encargado de decidir si lo que se le pasa como parámetro es una matriz densa o dispersa,en función de esto llama a un constructor u otro.
 #       to_s: Método que imprime por patalla una matriz recorriendo uno a uno los elementos de dicha matriz.
 #       +(other): Permite sumar un objeto MatrizDensa (self) con otro pasado por parámetro.Devuelve la suma de dichos elementos que es un objeto MatrizDensa.
 #       -(other): Permite restar un objeto MatrizDensa con otro pasado por parámetro.Devuelve la resta de dichos elementos como un objeto MatrizDensa.
@@ -222,12 +225,12 @@ end
 
 # ===Clase MatrizDispersa
 #
-#   Es la clase hija.  utilizamos hashes
+#   Es la clase hija en la que utilizamos un hash para almacenar las posiciones y los valores de los elementos que no son ceros
+#   Se redefinen los métodos heredados.
 #
 
 class MatrizDispersa < Matriz
-    #modificar el initialize,pues no necesito almacenar los '0' guardar los indices donde se encuentran dichos ceros
-    #metodo que dado una fila y columna y un porcentaje de ceros prc,construye una matriz aleatoria
+    #atributos de la clase
     attr_accessor :hash_no_ceros, :filas, :columnas
     
    def initialize(matriz)
