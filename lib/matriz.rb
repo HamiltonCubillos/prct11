@@ -31,8 +31,8 @@ module Operatoria
    def -(other)
       raise ArgumentError, "La longitud de las matrices no coincide." unless @filas == other.filas && @columnas == other.columnas
       resta = Matriz.new(matriz)
-      self.filas.times do |i|
-         self.columnas.times do |j|
+      0.upto(filas-1) do |i|
+         0.upto(columnas-1) do |j|
             resta.matriz[i][j] = self.matriz[i][j] - other.matriz[i][j]
          end
       end
