@@ -313,7 +313,7 @@ class MatrizDispersa < Matriz
       end
     
    def ==(other)
-                        hash_no_ceros == other.hash_no_ceros
+     hash_no_ceros == other.hash_no_ceros
    end
 
    def *(other)
