@@ -83,7 +83,6 @@ module Operatoria
    
    #Dos matrices son multiplicables si el numero de columnas de A coincide con el numero de filas de B
    def * (other)
-      puts "dentro de producto de Matriz"
       raise ArgumentError, "La longitud de las matrices no coincide." unless @columnas == other.filas
       elemento = Array.new
       acumulado = 0
