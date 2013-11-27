@@ -31,8 +31,8 @@ module Operatoria
    def -(other)
       raise ArgumentError, "La longitud de las matrices no coincide." unless @filas == other.filas && @columnas == other.columnas
       resta = Matriz.new(matriz)
-      self.filas.times do |i|
-         self.columnas.times do |j|
+      0.upto(filas-1) do |i|
+         0.upto(columnas-1) do |j|
             resta.matriz[i][j] = self.matriz[i][j] - other.matriz[i][j]
          end
       end
@@ -83,7 +83,6 @@ module Operatoria
    
    #Dos matrices son multiplicables si el numero de columnas de A coincide con el numero de filas de B
    def * (other)
-      puts "dentro de producto de Matriz"
       raise ArgumentError, "La longitud de las matrices no coincide." unless @columnas == other.filas
       elemento = Array.new
       acumulado = 0
@@ -152,7 +151,7 @@ class Matriz
    def to_s
       0.upto(filas-1) do |i|
          0.upto(columnas-1) do |j|
-            print "#{matriz[i][j]} "
+             "#{matriz[i][j]} "
          end
                                 puts
       end
@@ -208,8 +207,8 @@ class MatrizDensa < Matriz
 
         def +(other)
         sumam = Array.new(@filas,0){Array.new(@columnas,0)}
-        filas.times do |i|
-         columnas.times do |j|
+        0.upto(filas-1) do |i|
+         0.upto(columnas-1) do |j|
              if (other.hash_no_ceros.key?("#{i}#{j}"))
                     sumam[i][j] = other.hash_no_ceros["#{i}#{j}"] + matriz[i][j]
              else
