@@ -78,9 +78,6 @@ describe Matriz do
 				( @MatrizA + @MatrizB ).should eq @Matriz_Resultado
 			end
 			
-			#añadir prueba para multiplicar dos matrices donde una sea 3x2 y la otra 2x3
-			#otra prueba donde no se pueda multiplicar 
-			
 			 it "restar dos matrices de enteros" do
 				(@MatrizA - @MatrizB ).matriz.should eq [[0,0],[0,0]]
 			 end
@@ -138,7 +135,7 @@ describe Matriz do
 	it "restar 2 matrices dispersas"do
 		(@MaDis3 -  @MaDis2).should eq @MaDis4
 	end
-	#en realidad solo comprueba el resultado,el resultado sigue siendo disperso
+
 	it "sumar 2 matrices dispersas y den resultado una densa" do
 		@MaDis11 =  MatrizDispersa.new([[0,0,0],[1,2,3],[0,0,0]])
 		@MaDis22 = MatrizDispersa.new([[1,2,3],[0,0,0],[0,0,0]])
@@ -148,7 +145,7 @@ describe Matriz do
 		
 	end 
  end
- #en realidad solo comprueba el resultado,el resultado sigue siendo disperso
+
  describe "Se puede sumar una matriz densa" do
 	it " con una dispersa y den resultado una densa" do
 		@MaDispersa1 =  MatrizDispersa.new([[0,0,0],[1,2,3],[0,0,0]])
