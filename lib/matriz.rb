@@ -147,7 +147,7 @@ class Matriz
    def to_s
       0.upto(filas-1) do |i|
          0.upto(columnas-1) do |j|
-            print "#{matriz[i][j]} "
+             "#{matriz[i][j]} "
          end
                                 puts
       end
