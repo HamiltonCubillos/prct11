@@ -32,8 +32,8 @@ module Operatoria
    def +(other)
       raise ArgumentError, "La longitud de las matrices no coincide." unless @filas == other.filas && @columnas == other.columnas
       sum = Matriz.new(matriz) #inicializas el vector sum con el primer con el primer
-      self.filas.times do |i|
-         self.columnas.times do |j|
+       0.upto(filas-1) do |i|
+          0.upto(columnas-1) do |j|
             sum.matriz[i][j] = self.matriz[i][j] + other.matriz[i][j]
          end
       end
@@ -159,8 +159,8 @@ class Matriz
    
       #Imprime la matrices
    def to_s
-      filas.times do |i|
-         columnas.times do |j|
+      0.upto(filas-1) do |i|
+         0.upto(columnas-1) do |j|
             print "#{matriz[i][j]} "
          end
                                 puts
@@ -300,7 +300,7 @@ class MatrizDispersa < Matriz
       resta=MatrizDispersa.new(Array.new(@filas,0){Array.new(@columnas,0)})
       resta.hash_no_ceros = (self.hash_no_ceros.merge(other.hash_no_ceros){|key,oldval,newval| oldval-0-newval}).clone
       if comprobar(resta.hash_no_ceros)
-                                        return resta
+         return resta
       else
            m = Array.new(@filas,0){Array.new(@columnas,0)}
            resta.hash_no_ceros.collect {|key, value| m[(key[0]).to_i][(key[1]).to_i] = value }
@@ -324,8 +324,8 @@ class MatrizDispersa < Matriz
             acumulado = 0
             self.columnas.times do |k|
                if ( (self.hash_no_ceros.key?("#{i}#{k}")) && (other.hash_no_ceros.key?("#{k}#{j}")))
-         mult=self.hash_no_ceros["#{i}#{k}"] * other.hash_no_ceros["#{k}#{j}"]
-         else
+					mult=self.hash_no_ceros["#{i}#{k}"] * other.hash_no_ceros["#{k}#{j}"]
+				else
          #sumarle 0 al acumulado
                  if (self.hash_no_ceros.key?("#{i}#{k}") == false )
                  mult=0;
