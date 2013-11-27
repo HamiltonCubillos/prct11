@@ -12,6 +12,6 @@ task :default => :spec
 Rake::RDocTask.new do |rd|
     rd.main = "README.md"
     rd.rdoc_files.include("README.md", "lib/**/*.rb")
-  end
+end
 
 
