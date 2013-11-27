@@ -280,15 +280,13 @@ class MatrizDispersa < Matriz
     def +(other)
       raise TypeError, "La matriz other no es dispersa" unless other.instance_of? MatrizDispersa
       raise ArgumentError, "La longitud de las matrices no coincide." unless @filas == other.filas && @columnas == other.columnas
-      
       suma=MatrizDispersa.new(Array.new(@filas,0){Array.new(@columnas,0)})
       suma.hash_no_ceros = (hash_no_ceros.merge(other.hash_no_ceros){|key,oldval,newval| oldval+newval}).clone
-      
       if comprobar(suma.hash_no_ceros)
          return suma
       else
          m = Array.new(@filas,0){Array.new(@columnas,0)}
-         suma.hash_no_ceros.each {|key, value| m[(key[0]).to_i][(key[1]).to_i] = value }
+         suma.hash_no_ceros.map {|key, value| m[(key[0]).to_i][(key[1]).to_i] = value }
          sum = MatrizDensa.new(m)
          return sum
       end
@@ -304,13 +302,12 @@ class MatrizDispersa < Matriz
       if comprobar(resta.hash_no_ceros)
                                         return resta
       else
-                                        puts resta.hash_no_ceros
-                                        m = Array.new(@filas,0){Array.new(@columnas,0)}
-                                        resta.hash_no_ceros.each {|key, value| m[(key[0]).to_i][(key[1]).to_i] = value }
-                                        res = MatrizDensa.new(m)
-                                        return res
-                        end
-                end
+           m = Array.new(@filas,0){Array.new(@columnas,0)}
+           resta.hash_no_ceros.collect {|key, value| m[(key[0]).to_i][(key[1]).to_i] = value }
+           res = MatrizDensa.new(m)
+           return res
+       end
+      end
     
    def ==(other)
                         hash_no_ceros == other.hash_no_ceros
@@ -347,14 +344,6 @@ class MatrizDispersa < Matriz
       end
       return(elemento)
    end
-
-   
-# def *(other)
-# raise TypeError, "La matriz other no es dispersa" unless other.instance_of? MatrizDispersa
-# raise RuntimeError, "El tamaño de las matrices no coincide" unless self.columnas= other.filas
-#
-#
-# end
    
    def maximo
       max=0;
