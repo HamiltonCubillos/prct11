@@ -205,8 +205,8 @@ class MatrizDensa < Matriz
 
         def +(other)
         sumam = Array.new(@filas,0){Array.new(@columnas,0)}
-        filas.times do |i|
-         columnas.times do |j|
+        0.upto(filas-1) do |i|
+         0.upto(columnas-1) do |j|
              if (other.hash_no_ceros.key?("#{i}#{j}"))
                     sumam[i][j] = other.hash_no_ceros["#{i}#{j}"] + matriz[i][j]
              else
