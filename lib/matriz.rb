@@ -226,6 +226,12 @@ end
 #
 #   Es la clase hija en la que utilizamos un hash para almacenar las posiciones y los valores de los elementos que no son ceros
 #   Se redefinen los métodos heredados.
+#       to_s: Método que imprime por patalla una matriz recorriendo uno a uno los elementos de dicha matriz.
+#       +(other): Permite sumar un objeto MatrizDensa (self) con otro pasado por parámetro.Devuelve la suma de dichos elementos que es un objeto MatrizDensa.
+#       -(other): Permite restar un objeto MatrizDensa con otro pasado por parámetro.Devuelve la resta de dichos elementos como un objeto MatrizDensa.
+#       *(other): Permite multiplicar un objeto MatrizDensa(self) con otro pasado por parámetro.Devuelve un objeto MatrizDensa como multiplicación de ambas matrices .
+#       maximo: Devuelve el mayor elemento dentro de una matriz recorriendo la misma y quedándose con el mayor elemento encontrado.
+#       maximo: Devuelve el menor elemento dentro de una matriz recorriendo la misma y quedándose con el menor elemento encontrado.
 #
 
 class MatrizDispersa < Matriz
